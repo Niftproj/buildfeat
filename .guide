@@ -1,0 +1,10 @@
+// idea: build a  gui or command line utility for automated build system genration in simple words.
+
+// $buildfeat ASSERT FIND($CC) | print()
+$buildfeat USE MAKEFILE # or MESON etc
+$buildfeat DECLARE "CSOURCES" WITH VALUE {FIND *.c -DEPTH 2}
+$buildfeat DECLARE "CSOURCES" WITH VALUE "main.c ether.c"
+$buildfeat DECLARE "C_OBJS" WITH VALUE {GEN_OBJS(.o) $CSOURCES}
+// $buildfeat ROUTINE "BUILD" WITH CMDS {read(build.feat)}
+
+// CAN BE IN TS,JS,OR ETC
