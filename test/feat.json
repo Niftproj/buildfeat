@@ -7,9 +7,9 @@
     "projectType": "custom",
     "projectRoot": "./",
     "buildSystem": "make",
-    "languages": ["c", "c++", "python"],
+    "languages": ["c", "cxx", "python"],
     "compilerOptions": {
-        "useSystem": "true",
+        "useSystem": true,
         "path": "/usr/bin/custom_root/",
         "c": "$compilerPath/bin/gcc",
         "c++": "$compilerPath/bin/gxx",
@@ -18,5 +18,5 @@
     "buildDir": "build",
     "binDir": "bin",
     "srcDir": "src",
-    "sourceDepth": "6"
+    "sourceDepth": 2
 }
