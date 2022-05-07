@@ -1,13 +1,13 @@
 {
   "name": "buildfeat",
-  "version": "1.0.0",
+  "version": "2022.5.5",
   "description": "An Easy, automated, and extensible build system.",
-  "main": "./bin/index.js",
+  "main": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "buildfeat": "./bin/index.js"
+    "buildfeat": "./index.js"
   },
   "repository": {
     "type": "git",

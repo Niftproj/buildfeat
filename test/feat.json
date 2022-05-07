@@ -1,0 +1,22 @@
+{
+    "featConfigure": {
+        "featDocType": "featGenOptions",
+        "featVersion": "2022.5.5",
+        "featSupportFamily": "2022.x"
+    },
+    "projectType": "custom",
+    "projectRoot": "./",
+    "buildSystem": "make",
+    "languages": ["c", "c++", "python"],
+    "compilerOptions": {
+        "useSystem": "true",
+        "path": "/usr/bin/custom_root/",
+        "c": "$compilerPath/bin/gcc",
+        "c++": "$compilerPath/bin/gxx",
+        "python": "$compilerPath/py/python"
+    },
+    "buildDir": "build",
+    "binDir": "bin",
+    "srcDir": "src",
+    "sourceDepth": "6"
+}
