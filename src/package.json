@@ -1,0 +1,33 @@
+{
+  "name": "buildfeat",
+  "version": "1.0.0",
+  "description": "An Easy, automated, and extensible build system.",
+  "main": "./bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "buildfeat": "./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Niftproj/buildfeat.git"
+  },
+  "keywords": [
+    "buildfeat",
+    "easybuild",
+    "build-tool"
+  ],
+  "author": "@Niftproj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Niftproj/buildfeat/issues"
+  },
+  "homepage": "https://github.com/Niftproj/buildfeat#readme",
+  "dependencies": {
+    "boxen": "4.0",
+    "chalk": "2.4",
+    "terminal-image": "^2.0.0",
+    "yargs": "13.2"
+  }
+}
