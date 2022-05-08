@@ -18,5 +18,13 @@
     "buildDir": "build",
     "binDir": "bin",
     "srcDir": "src",
-    "sourceDepth": 2
+    "sourceDepth": 1,
+    "customs": {
+        "MYPROJ_VERSION": "0.1b",
+        "LINKER_SCRIPT": "$srcPath/script.x"
+    },
+    "copyMe": "\nall:\n\t@echo $(FEAT_OBJECTS)",
+    "routines": {
+        "build": "0"
+    }
 }

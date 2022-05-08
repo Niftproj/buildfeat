@@ -10,6 +10,7 @@ class FeatMakeSystem
         this.compilerOptions = {};
         this.compilers = {};
         this.sources = {};
+        this.objects = [];
     }
 
     getSystemCompilers = (lang = 'c') => {
@@ -41,14 +42,14 @@ class FeatMakeSystem
     }
 
     getWildcardValue = (l) => {
-        let exts = '';
+        let exts = '$(FEAT_SRCDIR)';
 
         for (let t = 0; t < this.config.sourceDepth; t++)
         {
             exts += '/*';
         }
 
-        return `$(wildcard ${exts}/*.${this.getLanguageExtensions(l)})`;
+        return `$(wildcard ${exts}.${this.getLanguageExtensions(l)})`;
     }
 
     generate = () => {
@@ -68,10 +69,27 @@ class FeatMakeSystem
                 this.compilers[l] = this.getSystemCompilers(l);
                 this.makefile += `\nFEAT_${l.toUpperCase()}=${this.compilers[l]}`;
                 this.sources[l] = `\nFEAT_${l.toUpperCase()}_SOURCES=${this.getWildcardValue(l)}`;
+                this.objects.push(`$(patsubst $(FEAT_SRCDIR)/%.${this.getLanguageExtensions(l)}, $(FEAT_BUILDDIR)/%.${this.getLanguageExtensions(l)}.o, $(FEAT_${l.toUpperCase()}_SOURCES))`);
             });
         }
 
         Object.keys(this.sources).forEach(key => this.makefile += this.sources[key]);
+
+        Object.keys(this.config.customs).forEach(key => this.makefile += `\n${key}=${this.config.customs[key]}`);
+
+        this.makefile += `\nFEAT_OBJECTS=   \\`;
+        let i = 0;
+        let l = this.objects.length;
+        this.objects.map(objl => {
+            this.makefile += `\n\t${objl}`;
+            if(i != l-1)
+            {
+                this.makefile += `\t\\`;
+            }
+            i++;
+        });
+
+        this.makefile += `\n${this.config.copyMe}`;
 
         return {
             "makefile": this.makefile
