@@ -50,14 +50,19 @@ function getPath(name) {
     return path.join("./", name);
 }
 
-fs.readFile(scriptPath, {encoding: 'utf-8'}, (err, data) => {
-    if(!err)
-    {
-        console.log(data);
-    }
-    else
-    {
-        console.error(boxen("File read error: "+err, __BOXEN_OPTIONS_ERROR));
-        exit(-1);
-    }
-})
+const FeatLang = require('./lib/feat.lang');
+
+const FtL = new FeatLang();
+FtL.read(scriptPath);
+
+// fs.readFile(scriptPath, {encoding: 'utf-8'}, (err, data) => {
+//     if(!err)
+//     {
+//         console.log(data);
+//     }
+//     else
+//     {
+//         console.error(boxen("File read error: "+err, __BOXEN_OPTIONS_ERROR));
+//         exit(-1);
+//     }
+// })

@@ -4,7 +4,8 @@
   "description": "An Easy, automated, and extensible build system.",
   "main": "./index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install": "sudo npm install -g",
+    "test": "cd ../test && buildfeat"
   },
   "bin": {
     "buildfeat": "./index.js"

@@ -1,1 +1,10 @@
-HSSSSSSSSSSS
+; BUILDFEAT - A GENERIC BUILD SYSTEM EXAMPLE
+
+@ SectionName
+;| VarName: VarValue
+
+; funcs
+;@ Function:(parameter):
+;{
+;    Var2: Var2Val;
+;}
