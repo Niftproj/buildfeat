@@ -1,7 +1,15 @@
 ; BUILDFEAT - A GENERIC BUILD SYSTEM EXAMPLE
 
 @ SectionName
+| VarName: VarValue
+
+@ Section2
+| VarName:  VarValue
+
+@ FunctionGrl:(p, mm):
+{
 ;| VarName: VarValue
+}
 
 ; funcs
 ;@ Function:(parameter):
