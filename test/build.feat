@@ -1,18 +1,16 @@
 ; BUILDFEAT - A GENERIC BUILD SYSTEM EXAMPLE
 
-@ SectionName
-| VarName: VarValue
+@ Headers
+| FeatName: "Test"
+| FeatVersion: "2022"
+| FeatBuildID: "x124syf76uj80jlk0jguh"
 
-@ Section2
-| VarName:  VarValue
+@ Languages
+| C: useDynamics(FT_HOST)
 
-@ FunctionGrl:(p, mm):
-{
-;| VarName: VarValue
-}
+@ Directories
+| SourceDirs: "src"
+| OutputDirs: "build"
 
-; funcs
-;@ Function:(parameter):
-;{
-;    Var2: Var2Val;
-;}
+@ Sources
+| Include["C"]: ["src/main.c"]

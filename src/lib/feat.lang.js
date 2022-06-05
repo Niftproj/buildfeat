@@ -56,6 +56,8 @@ FeatLang.prototype.read = function(file) {
         .toString('utf8')
         .split(LINE_BOUNDARY);
     parseLines.call(this, file, lines);
+
+    return this._sections;
 };
 
 function parseLines(file, lines) {
@@ -106,8 +108,10 @@ function parseLines(file, lines) {
             {
                 // VARIABLE
                 // console.log(res_var);
+                let val = res_var[2].replaceAll(" ", "");
+                val = val.replaceAll("\"", "");
                 if(this._sections[lastLabel])
-                    this._sections[lastLabel].addVar(res_var[1], res_var[2].replaceAll(" ", ""), -1);
+                    this._sections[lastLabel].addVar(res_var[1], val, -1);
             }
             // Check if etc statements
         }
@@ -127,7 +131,7 @@ function parseLines(file, lines) {
     
     });
 
-    console.log(JSON.stringify(this._sections))
+    // console.log(JSON.stringify(this._sections))
 
 }
 

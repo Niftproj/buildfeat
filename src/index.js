@@ -51,18 +51,8 @@ function getPath(name) {
 }
 
 const FeatLang = require('./lib/feat.lang');
+const FeatSystem = require('./lib/feat.system');
 
-const FtL = new FeatLang();
-FtL.read(scriptPath);
-
-// fs.readFile(scriptPath, {encoding: 'utf-8'}, (err, data) => {
-//     if(!err)
-//     {
-//         console.log(data);
-//     }
-//     else
-//     {
-//         console.error(boxen("File read error: "+err, __BOXEN_OPTIONS_ERROR));
-//         exit(-1);
-//     }
-// })
+const ftLanguage = new FeatLang();
+let ftSystem = new FeatSystem(ftLanguage.read(scriptPath));
+ftSystem._start();
